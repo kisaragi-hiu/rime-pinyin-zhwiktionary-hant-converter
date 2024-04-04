@@ -25,7 +25,7 @@ ${DICTNAME}.dict.yaml: ${DICTNAME}.raw
 	sed 's/[ ][ ]*/\t/g' ${DICTNAME}.raw > ${DICTNAME}.rime.raw
 	sed -i 's/\t0//g' ${DICTNAME}.rime.raw
 	sed -i "s/'/ /g" ${DICTNAME}.rime.raw
-	echo -e '---\nname: ${DICTNAME}\nversion: "0.1"\nsort: by_weight\n...\n' >> ${DICTNAME}.dict.yaml
+	echo -e '---\nname: ${DICTNAME}\nversion: "0.1"\nsort: by_weight\n...\n' > ${DICTNAME}.dict.yaml
 	cat ${DICTNAME}.rime.raw >> ${DICTNAME}.dict.yaml
 
 install: ${DICTNAME}.dict
