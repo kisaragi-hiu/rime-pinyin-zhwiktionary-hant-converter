@@ -1,5 +1,5 @@
 VERSION=20240401
-DICTNAME=zhwiktionary
+DICTNAME=zhwiktionary-hant
 FILENAME=zhwiktionary-$(VERSION)-all-titles-in-ns0
 
 all: build

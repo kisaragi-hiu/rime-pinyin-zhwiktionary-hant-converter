@@ -33,7 +33,6 @@ The RIME dictionary that kaseiwang/fcitx5-pinyin-zhwiki generates is for Luna Pi
   
   <!-- Copy into ~/.local/share/fcitx5/pinyin/dictionaries/ (create the folder if it does not exist) -->
 
-
 ## Build
 
 Build-time dependencies:
@@ -44,7 +43,7 @@ Build-time dependencies:
 Manual Build RIME dictionary & Installation:
 
 ```
-make zhwiktionary.dict.yaml
+make zhwiktionary-hant.dict.yaml
 sudo make install # or manually copy the file to the right place
 ```
 
