@@ -17,7 +17,7 @@ _LIST_PAGE_ENDINGS = [
     "列表",
     "对照表",
 ]
-_LOG_EVERY = 1000
+_LOG_EVERY = 10000
 
 _PINYIN_SEPARATOR = "'"
 _HANZI_RE = re.compile("^[\u4e00-\u9fa5]+$")
