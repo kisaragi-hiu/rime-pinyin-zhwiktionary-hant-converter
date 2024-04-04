@@ -58,3 +58,5 @@ Note that the generated dictionary follows Wikimedia's license: https://dumps.wi
 
 - Original zhwiki converter by Felix Yan: https://github.com/felixonmars/fcitx5-pinyin-zhwiki
 - Original zhwiktionary converter by Kasei Wang: https://github.com/kaseiwang/fcitx5-pinyin-zhwiki
+- pypinyin, which provides all the pinyin data: https://github.com/mozillazg/python-pinyin
+- opencc, the godsend Simplified/Traditional converter: https://opencc.byvoid.com/
