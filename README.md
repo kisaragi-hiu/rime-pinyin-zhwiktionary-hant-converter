@@ -1,6 +1,14 @@
-# Chinese Wiktionary dictionary for fcitx5-pinyin and RIME
+# Chinese Wiktionary dictionary for and RIME
 
-Installation:
+Note that this converter only provides a RIME dictionary as the format (with tones) is not compatible with fcitx5-pinyin.
+
+If anyone wants this for fcitx5-pinyin, please let me know by filing an issue. It will require a bit of fiddling but shouldn't be too hard.
+
+## Why
+
+The RIME dictionary that kaseiwang/fcitx5-pinyin-zhwiki generates is for Luna Pinyin (no tones) and isn't usable through Bopomofo. This version aims to support that.
+
+## Installation
 
 - Arch Linux:
 
@@ -26,31 +34,25 @@ Installation:
   <!-- Copy into ~/.local/share/fcitx5/pinyin/dictionaries/ (create the folder if it does not exist) -->
 
 
+## Build
 
-Build Requirements:
+Build-time dependencies:
 
-- libime (https://github.com/fcitx/libime/)
 - opencc (https://pypi.org/project/OpenCC/)
 - pypinyin (https://pypi.org/project/pypinyin/)
 
+Manual Build RIME dictionary & Installation:
 
-Manual Build & Installation:
+```
+make zhwiktionary.dict.yaml
+sudo make install # or manually copy the file to the right place
+```
 
-make
-sudo make install
+## License
 
-Manual Build rime dict & Installation
-
-make zhwiki.dict.yaml
-sudo make install_rime_dict
-
-License: Unlicense
+Unlicense
 
 Note that the generated dictionary follows Wikimedia's license: https://dumps.wikimedia.org/legal.html
-
-## Why
-
-The RIME dictionary that kaseiwang/fcitx5-pinyin-zhwiki generates is for Luna Pinyin (no tones) and isn't usable through Bopomofo. This version aims to support that.
 
 ## Acknowledgements
 
