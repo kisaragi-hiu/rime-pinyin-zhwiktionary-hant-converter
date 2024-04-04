@@ -14,7 +14,7 @@ $(FILENAME).gz:
 $(FILENAME): $(FILENAME).gz
 	gzip -k -d $(FILENAME).gz
 
-${DICTNAME}.raw: $(FILENAME)
+${DICTNAME}.raw: $(FILENAME) convert.py
 	./convert.py $(FILENAME) | grep -v "噷" > ${DICTNAME}.raw.tmp
 	sort -u ${DICTNAME}.raw.tmp > ${DICTNAME}.raw
 
