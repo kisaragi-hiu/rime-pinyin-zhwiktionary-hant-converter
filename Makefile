@@ -1,4 +1,4 @@
-VERSION=20220501
+VERSION=20240401
 DICTNAME=zhwiktionary
 FILENAME=zhwiktionary-$(VERSION)-all-titles-in-ns0
 
