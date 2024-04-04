@@ -9,7 +9,7 @@ import re
 import sys
 
 import opencc
-from pypinyin import lazy_pinyin
+from pypinyin import Style, lazy_pinyin
 
 # Require at least 2 characters
 _MINIMUM_LEN = 2
@@ -63,7 +63,12 @@ def main():
         for line in f:
             title = _TO_SIMPLIFIED_CHINESE.convert(line.strip())
             if is_good_title(title, previous_title):
-                pinyin = [_PINYIN_FIXES.get(item, item) for item in lazy_pinyin(title)]
+                pinyin = [
+                    _PINYIN_FIXES.get(item, item)
+                    for item in lazy_pinyin(
+                        title, style=Style.TONE3, neutral_tone_with_five=True
+                    )
+                ]
                 pinyin = _PINYIN_SEPARATOR.join(pinyin)
                 if pinyin == title:
                     logging.info(f"Failed to convert to Pinyin. Ignoring: {pinyin}")
