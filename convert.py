@@ -21,7 +21,7 @@ _LOG_EVERY = 10000
 
 _PINYIN_SEPARATOR = "'"
 _HANZI_RE = re.compile("^[\u4e00-\u9fa5]+$")
-_TO_SIMPLIFIED_CHINESE = opencc.OpenCC("t2s.json")
+_OPENCC = opencc.OpenCC("s2tw.json")
 
 _PINYIN_FIXES = {
     "n": "en",  # https://github.com/felixonmars/fcitx5-pinyin-zhwiki/issues/13
@@ -61,7 +61,7 @@ def main():
     result_count = 0
     with open(sys.argv[1]) as f:
         for line in f:
-            title = _TO_SIMPLIFIED_CHINESE.convert(line.strip())
+            title = _OPENCC.convert(line.strip())
             if is_good_title(title, previous_title):
                 pinyin = [
                     _PINYIN_FIXES.get(item, item)
